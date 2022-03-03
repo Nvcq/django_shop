@@ -1,0 +1,16 @@
+{% if listProduct %}
+    <ul>
+    {% for product in listProduct %}
+        <li><a href="/shop/{{ product.id }}/">{{ product.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+<form action=" " method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
