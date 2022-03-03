@@ -1,0 +1,16 @@
+{% if listQ %}
+    <ul>
+    {% for question in listQ %}
+        <li><a href="/caprisun/{{ question.id }}/">{{ question.text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+<form action=" " method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
