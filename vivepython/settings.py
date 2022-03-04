@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'caprisun.apps.CaprisunConfig',
     'shop.apps.ShopConfig',
     'channels',
+    'bootstrap5',
     'chat',
     'django.contrib.admin',
     'django.contrib.auth',
