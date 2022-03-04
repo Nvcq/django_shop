@@ -14,8 +14,12 @@
 <h2> Prix : {{ product.price }} <br> </h2>
 <p> Quantité : {{ product.quantity }} <br> </p>
 
+<form action="update" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
 <!-- <a href="update">Update</a> -->
+
 <button class="btn btn-danger btn-sm" style="padding: 10px 5px"><a href="delete" style="color: white; border: none; text-decoration: none;">Delete</a></button>
-
-
-

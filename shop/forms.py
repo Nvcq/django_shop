@@ -1,3 +1,5 @@
+from attr import fields
+from django import forms
 from django.forms import ModelForm
 from .models import Product
 
@@ -6,3 +8,7 @@ class productForm(ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'description', 'price', 'quantity', 'image']
+
+
+class quantityForm(forms.Form):
+    newquantity = forms.IntegerField(label='Acheter',)
