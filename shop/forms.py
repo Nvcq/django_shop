@@ -11,4 +11,4 @@ class productForm(ModelForm):
 
 
 class quantityForm(forms.Form):
-    newquantity = forms.IntegerField(label='Acheter',)
+    newquantity = forms.IntegerField(label="Nombre d'article(s) ")
