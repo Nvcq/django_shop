@@ -4,10 +4,17 @@
     <meta charset="utf-8"/>
     <title>Chat Room</title>
 </head>
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
 <body>
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
+    <h1 class="text-info text-center mt-5 pt-5 pb-5">Dans quelle salle souhaitez-vous rentrer ?</h1><br>
+    <div class="w-50 m-auto"><input id="room-name-input" type="text" size="100" class="text-center p-3 w-100 rounded"></div>
+    <br>
+    <div class="d-grid justify-content-center"><input id="room-name-submit" type="button" value="Entrer"></div>
 
     <script>
         document.querySelector('#room-name-input').focus();
