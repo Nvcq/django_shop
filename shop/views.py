@@ -44,8 +44,10 @@ def detail(request, product_id):
 
 def update(request, product_id): 
     product = get_object_or_404(Product, pk=product_id)
-    form = quantityForm(request.POST )
-    product.quantity = product.quantity - int(request.POST.get('newquantity'))
+    newquantity = int(request.POST.get('newquantity'))
+    if newquantity < 0:
+        return HttpResponseRedirect('/shop')
+    product.quantity = product.quantity - newquantity
     product.save(update_fields=['quantity'])
     return HttpResponseRedirect('/shop')
 
