@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 shop/migrations/__pycache__/
 caprisun/migrations/__pycache__/
+db.sqlite3
 
 # C extensions
 *.so
