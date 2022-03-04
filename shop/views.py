@@ -21,7 +21,19 @@ def index(request):
         'form' : form,
     }
     return HttpResponse(template.render(context, request))
+    
+def create(request):
+    form = productForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/shop')
+    template = loader.get_template('shop/create.html')
+    context = {
+        'form': form,
 
+    }
+    return HttpResponse(template.render(context, request))
+    
 def detail(request, product_id):
     try:
         product = Product.objects.get(pk=product_id)

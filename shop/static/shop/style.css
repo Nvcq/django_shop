@@ -1,19 +1,20 @@
-p{
-    color: red;
-}
+
 img { 
-    width : 250px;
+    width : auto;
     height : 150px;
 }
 ul{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 li{
+    width: 20%;
     list-style: none;
     display: flex;
     flex-direction: column;
     border: solid 2px;
+    margin: 5%;
 }
 .errorlist{
     display: none;
@@ -21,5 +22,10 @@ li{
 form{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
 }
+a{ 
+ text-decoration:none; 
+ border: none;
+ color: black;
+} 

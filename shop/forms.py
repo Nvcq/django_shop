@@ -5,4 +5,4 @@ class productForm(ModelForm):
     use_required_attribute = False
     class Meta:
         model = Product
-        fields = ['name', 'description', 'price', 'quantity']
+        fields = ['name', 'description', 'price', 'quantity', 'image']

@@ -1,11 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/style.css' %}">
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
 <h1> Nom de l'article : {{ product.name }} <br> </h1>
 <img src="{{ product.image }}" alt="image">
 <p> Description : {{ product.description }} <br> </p>
 <h2> Prix : {{ product.price }} <br> </h2>
 <p> Quantité : {{ product.quantity }} <br> </p>
 
-<a href="update">Update</a>
-<a href="delete">Delete</a>
+<!-- <a href="update">Update</a> -->
+<button class="btn btn-danger btn-sm" style="padding: 10px 5px"><a href="delete" style="color: white; border: none; text-decoration: none;">Delete</a></button>
 
 
 

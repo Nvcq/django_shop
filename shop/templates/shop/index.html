@@ -7,25 +7,43 @@
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
 
+
+<header style="margin: 15px auto;">
+          <div class="d-flex justify-content-end" style="margin-right: 2%;">
+            <a href="create" class="p-3 mb-2 bg-info text-white" style="border: none; text-decoration: none; padding: 5%; margin-top: 2%; border-radius: 3%;">Ajouter un produit</a>
+            <a href="../chat" style="margin-top: 2%; margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="black" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+            
+            </svg></a>
+            </div>
+
+    
+</header>
+<body>
+    <h2 class="text-center">Découvrez nos animaux trop mignons 🐶</h2>
 {% if listProduct %}
     <ul>
     {% for product in listProduct %}
-        <li>
+        <li style="border-radius: 5px; box-shadow: 12px 12px 2px 1px #0dcaf0;">
             <img src="{{ product.image }}" alt="image">
-            <a href="/shop/{{ product.id }}/">{{ product.name }}</a></li>
+            <h2 style="font-size: 1.5em; margin-top: 2%; padding-left: 2%;"><a href="/shop/{{ product.id }}/" style="color: black; border: none; text-decoration: none;">{{ product.name }}</a></h2>
+            <p style="font-size: 12px; padding-left: 2%;">{{ product.description }}</p>
+            <p style="font-size: 12px; padding-left: 2%;">Quantité : <span style="color: #0dcaf0; font-weight: 800;">{{ product.quantity }}</span></p>
+            <div class="d-grid justify-content-end">
+            <p style="font-size: 12px; font-weight: 800; margin-right: 10px;"> Prix: {{ product.price }}€</p>
+            <button class="btn btn-dark btn-sm" style="margin-right: 10px; margin-bottom: 5px;"><a href="/shop/{{ product.id }}/" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-bag" viewBox="0 0 16 16" class="bg-info">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg></a></button>
+            </div>
+        </li>
     {% endfor %}
     </ul>
-{% else %}
+{% else %} 
     <p>No polls are available.</p>
 {% endif %}
-
-<p class="text-warning">oui</p>
-
+</body>
 
 
 
-<form action=" " method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" class="btn btn-primary mb-3">
-</form>
+
+
