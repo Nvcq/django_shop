@@ -1,12 +1,24 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'shop/style.css' %}">
+
+
+
+
 {% if listProduct %}
     <ul>
     {% for product in listProduct %}
-        <li><a href="/shop/{{ product.id }}/">{{ product.name }}</a></li>
+        <li>
+            <img src="{{ product.image }}" alt="image">
+            <a href="/shop/{{ product.id }}/">{{ product.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+
+<p>BOLOSS</p>
 
 
 <form action=" " method="post">

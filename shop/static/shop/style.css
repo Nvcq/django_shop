@@ -1,0 +1,25 @@
+p{
+    color: red;
+}
+img { 
+    width : 250px;
+    height : 150px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px;
+}
+.errorlist{
+    display: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
