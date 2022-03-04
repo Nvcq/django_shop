@@ -12,7 +12,7 @@ from .forms import productForm
 def index(request):
     listProduct = Product.objects.all()
     template = loader.get_template('shop/index.html')
-    form = productForm(request.POST)
+    form = productForm(request.POST, use_required_attribute=False)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/shop')
